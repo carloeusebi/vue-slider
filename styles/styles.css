@@ -21,11 +21,6 @@ img {
 #gallery img {
     width: 100%;
     height: 600px;
-    display: none;
-}
-
-#gallery img.active {
-    display: block;
 }
 
 #carousel .button {
