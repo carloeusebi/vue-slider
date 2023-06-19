@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Carlo Eusebi">
+    <title>Carousel</title>
+    <!-- font awesome -->
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'
+        integrity='sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=='
+        crossorigin='anonymous'>
+    <!-- bootstrap ONLY GRID -->
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap-grid.min.css'
+        integrity='sha512-EAgFb1TGFSRh1CCsDotrqJMqB2D+FLCOXAJTE16Ajphi73gQmfJS/LNl6AsjDqDht6Ls7Qr1KWsrJxyttEkxIA=='
+        crossorigin='anonymous'>
+    <!-- styles.css -->
+    <link rel="stylesheet" href="styles/styles.css" type="text/css">
+    <!-- Vue 3 -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <!-- javascript -->
+    <script defer src="js/scripts.js"></script>
+</head>
+
+<body>
+
+    <!-- Exercise made by
+    CARLO EUSEBI -->
+
+    <div class="container">
+
+        <h1 class="py-3">CAROUSEL</h1>
+
+        <div class="row my-5">
+
+            <!-- GALLERY -->
+            <div id="carousel" class="col-10 col-md-12 mb-md-3">
+
+                <!-- prev button -->
+                <div class="button d-flex align-items-center justify-content-start" id="prev">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </div>
+
+                <div id="gallery">
+                </div>
+
+                <div class="button d-flex align-items-center justify-content-end" id="next">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </div>
+            </div>
+
+            <!-- THUMBNAILS -->
+            <div id="thumbnails" class="col-2 col-md-12 d-flex flex-column flex-md-row">
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
