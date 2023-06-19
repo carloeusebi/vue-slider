@@ -30,26 +30,81 @@ const app = Vue.createApp({
         };
     },
     computed: {
+        /**
+         * Returns true if we are at the first image, false otherwise
+         * @returns {boolean} if we are at first image
+         */
+        isFirst() {
+            return this.currentIndex === 0;
+        },
+
+        /**
+         * Returns true if we are at the last image, false otherwise
+         * @returns {boolean} if we are at last image
+         */
+        isLast() {
+            return this.currentIndex === this.images.length - 1;
+        }
     },
     methods: {
+        /**
+         * Given the index of an element, returns true if we are viewing that element
+         * @param {number} index the index of the element we want to know if is active
+         * @returns {boolean} if we are at the element with current index
+         */
         isCurrentIndex(index) {
             return this.currentIndex === index;
         },
+
+        /**
+         * Displays the first image, by setting the currentIndex to 0
+         */
+        goToFirst() {
+            this.currentIndex = 0;
+        },
+
+        /**
+         * Displays the last image, by setting the currentIndex to images array last element's index
+         */
+        goToLast() {
+            this.currentIndex = this.images.length - 1;
+        },
+
+        /**
+         * Goes to the next image, if we are at the last image it goes to first image
+         */
         goToNext() {
-            this.currentIndex === this.images.length - 1 ? this.currentIndex = 0 : this.currentIndex++;
+            this.isLast ? this.goToFirst() : this.currentIndex++;
         },
+
+        /**
+         * Goes to the prev image, if we are at the first image it goes to last image
+         */
         goToPrev() {
-            this.currentIndex ? this.currentIndex-- : this.currentIndex = this.images.length - 1;
+            this.isFirst ? this.goToLast() : this.currentIndex--;
         },
+
+        /**
+         * Shows the selected image from the thumbnails, by setting the currentIndex to the number passed as parameter.
+         * @param {number} index the index of the image we want to display
+         */
         setCurrentIndex(index) {
             this.currentIndex = index;
         },
+
+        /**
+         * Starts the autoplay
+         */
         startAutoplay() {
             this.autoplay = setInterval(this.goToNext, 3000);
         },
+
+        /**
+         * Stops the autoplay
+         */
         stopAutoplay() {
             clearInterval(this.autoplay);
-        }
+        },
     },
     mounted() {
         this.startAutoplay();
