@@ -55,7 +55,7 @@
             <!-- THUMBNAILS -->
             <div id="thumbnails" class="col-2 col-md-12 d-flex flex-column flex-md-row">
                 <img v-for="(img, i) in images" :src="img.image" :alt="img.text" :title="img.description"
-                    :class="{active : isCurrentIndex(i)}">
+                    :class="{active : isCurrentIndex(i)}" @click="setCurrentIndex(i)">
             </div>
         </div>
 </body>

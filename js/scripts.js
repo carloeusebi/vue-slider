@@ -39,6 +39,9 @@ const app = Vue.createApp({
         },
         goToPrev() {
             this.currentIndex ? this.currentIndex-- : this.currentIndex = this.images.length - 1;
+        },
+        setCurrentIndex(index) {
+            this.currentIndex = index;
         }
     }
 });
