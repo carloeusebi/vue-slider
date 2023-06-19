@@ -2,6 +2,7 @@ const app = Vue.createApp({
     name: 'Carousel',
     data() {
         return {
+            autoplay: 0,
             currentIndex: 0,
             images: [
                 {
@@ -42,10 +43,16 @@ const app = Vue.createApp({
         },
         setCurrentIndex(index) {
             this.currentIndex = index;
+        },
+        startAutoplay() {
+            this.autoplay = setInterval(this.goToNext, 3000);
+        },
+        stopAutoplay() {
+            clearInterval(this.autoplay);
         }
     },
     mounted() {
-        setInterval(this.goToNext, 3000);
+        this.startAutoplay();
     }
 });
 
