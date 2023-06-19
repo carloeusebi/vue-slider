@@ -28,6 +28,19 @@ const app = Vue.createApp({
             ]
         };
     },
+    computed: {
+    },
+    methods: {
+        isCurrentIndex(index) {
+            return this.currentIndex === index;
+        },
+        goToNext() {
+            this.currentIndex++;
+        },
+        goToPrev() {
+            this.currentIndex--;
+        }
+    }
 });
 
 app.mount('#root');

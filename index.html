@@ -38,16 +38,16 @@
             <div id="carousel" class="col-10 col-md-12 mb-md-3">
 
                 <!-- prev button -->
-                <div class="button d-flex align-items-center justify-content-start" id="prev">
+                <div class="button d-flex align-items-center justify-content-start" id="prev" @click="goToPrev">
                     <i class="fa-solid fa-chevron-left"></i>
                 </div>
 
                 <div id="gallery">
                     <img v-for="(img, i) in images" :src="img.image" :alt="img.text" :title="img.description"
-                        v-show="currentIndex === i">
+                        v-show="isCurrentIndex(i)">
                 </div>
 
-                <div class="button d-flex align-items-center justify-content-end" id="next">
+                <div class="button d-flex align-items-center justify-content-end" id="next" @click="goToNext">
                     <i class="fa-solid fa-chevron-right"></i>
                 </div>
             </div>
@@ -55,7 +55,7 @@
             <!-- THUMBNAILS -->
             <div id="thumbnails" class="col-2 col-md-12 d-flex flex-column flex-md-row">
                 <img v-for="(img, i) in images" :src="img.image" :alt="img.text" :title="img.description"
-                    :class="{active : i === currentIndex}">
+                    :class="{active : isCurrentIndex(i)}">
             </div>
         </div>
 </body>
