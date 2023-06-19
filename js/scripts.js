@@ -35,10 +35,10 @@ const app = Vue.createApp({
             return this.currentIndex === index;
         },
         goToNext() {
-            this.currentIndex++;
+            this.currentIndex === this.images.length - 1 ? this.currentIndex = 0 : this.currentIndex++;
         },
         goToPrev() {
-            this.currentIndex--;
+            this.currentIndex ? this.currentIndex-- : this.currentIndex = this.images.length - 1;
         }
     }
 });
