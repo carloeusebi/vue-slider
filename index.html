@@ -43,7 +43,8 @@
                 </div>
 
                 <div id="gallery">
-
+                    <img v-for="(img, i) in images" :src="img.image" :alt="img.text" :title="img.description"
+                        v-show="currentIndex === i">
                 </div>
 
                 <div class="button d-flex align-items-center justify-content-end" id="next">
