@@ -32,7 +32,7 @@
 
         <h1 class="py-3">CAROUSEL</h1>
 
-        <div class="row my-5">
+        <div class="row my-5" @mouseenter="stopAutoplay" @mouseleave="startAutoplay">
 
             <!-- GALLERY -->
             <div id="carousel" class="col-10 col-md-12 mb-md-3">
@@ -53,8 +53,7 @@
             </div>
 
             <!-- THUMBNAILS -->
-            <div id="thumbnails" class="col-2 col-md-12 d-flex flex-column flex-md-row" @mouseenter="stopAutoplay"
-                @mouseleave="startAutoplay">
+            <div id="thumbnails" class="col-2 col-md-12 d-flex flex-column flex-md-row">
                 <img v-for="(img, i) in images" :src="img.image" :alt="img.text" :title="img.title"
                     :class="{active : isCurrentIndex(i)}" @click="setCurrentIndex(i)">
             </div>
