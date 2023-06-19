@@ -43,6 +43,9 @@ const app = Vue.createApp({
         setCurrentIndex(index) {
             this.currentIndex = index;
         }
+    },
+    mounted() {
+        setInterval(this.goToNext, 3000);
     }
 });
 
