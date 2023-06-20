@@ -43,11 +43,16 @@
                 </div>
 
                 <div id="gallery">
-                    <img v-for="(img, i) in images" :src="img.image" :alt="img.text" :title="img.title"
-                        v-show="isCurrentIndex(i)">
+                    <figure v-for="(img,i) in images" v-show="isCurrentIndex(i)">
+                        <img :src="img.image" :alt="img.text" :title="img.title">
+                        <figcaption>
+                            <h2>{{img.title}}</h2>
+                            <p>{{img.text}}</p>
+                        </figcaption>
+                    </figure>
                 </div>
 
-                <div class="button d-flex align-items-center justify-content-end" id="next" @click="goToNext">
+                <div class=" button d-flex align-items-center justify-content-end" id="next" @click="goToNext">
                     <i class="fa-solid fa-chevron-right"></i>
                 </div>
             </div>
